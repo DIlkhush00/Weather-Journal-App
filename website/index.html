@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather Journal App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Weather App</h1>
+    <!--Taking Information-->
+    <div class="inputInfo">
+        <label for="enteredCity">Search your City</label>
+        <input type="text" id="enteredCity" placeholder="Search..">
+        <div class="options">
+            Search by 
+            <button class="option">Zip</button>
+            <button class="option">Name</button>
+        </div>
+        <label for="feelings">Your Feelings</label>
+        <textarea name="feelings" id="feelings" cols="30" rows="5" placeholder="Tell us how are you feeling today?"></textarea>
+    </div>
+    
+    <!--displaying Information-->
+    <div class="showingInfo">
+        <div class="cityFullName">
+            <div class="cityName"></div>
+            <span class="cityCountry"></span>
+        </div>
+        <div class="cityTime"></div>
+        <div class="cityWeather">
+            <div class="cityWeatherIcon"></div>
+            <div class="cityWeatherDesc"></div>
+        </div>
+        <div class="cityTemp"></div>
+        <div class="cityWeatherDetails">
+            <div class="cityFeelsLike"></div>
+            <div class="cityHumidity"></div>
+            <div class="cityPressure"></div>
+        </div>
+        <div class="feelings"></div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>

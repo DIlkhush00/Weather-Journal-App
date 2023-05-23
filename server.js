@@ -22,11 +22,13 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
+
+//Routes
+
+
 // Setup Server
 const PORT = 8080;
 app.listen(PORT, listening);
 function listening(){
     console.log(`Listening on port: ${PORT}`);
 }
-
-//Routes
