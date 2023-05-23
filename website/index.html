@@ -13,13 +13,13 @@
         <div class="inputInfo">
             <div class="searchCity">
                 <label for="enteredCity">Search your City:</label>
-                <input type="text" id="enteredCity" placeholder="Enter Zip Code">
+                <input type="text" id="zip" placeholder="Enter zip code here">
             </div>
             <div class="yourFeelings">
                 <label for="feelings">Your Feelings:</label>
                 <textarea name="feelings" id="feelings" cols="30" rows="5" placeholder="Tell me how are you feeling today?"></textarea>
             </div>
-            <button class="button">Check</button>
+            <button class="button" id="generate">Check</button>
         </div>
     
         <!--displaying Information-->
@@ -28,7 +28,10 @@
                 <div class="cityName"></div>,
                 <span class="cityCountry"></span>
             </div>
-            <div class="cityTime" id="date"></div>
+            <div class="cityTime" id="date">
+                <div class="time"></div>
+                <div class="date"></div>
+            </div>
             <div class="cityTemp" id="temp"></div>
             <div class="cityWeatherDesc f-b"></div>
             <div class="cityWeatherDetails">
