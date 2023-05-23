@@ -30,6 +30,10 @@ app.post('/post-weather-data', (req, res)=>{
     console.log(projectData);
 })
 
+app.get('/all', (req, res)=>{
+    res.json(projectData);
+})
+
 // Setup Server
 const PORT = 8080;
 app.listen(PORT, listening);

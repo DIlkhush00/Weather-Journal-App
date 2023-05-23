@@ -64,6 +64,7 @@ generate.addEventListener('click', ()=>{
     .then(()=>{
         getProjectData('/all');
     })
+    .then(data => data.json())
     .then((data)=>{
         console.log(data);
     })
