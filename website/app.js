@@ -36,6 +36,18 @@ const postWeatherData = async function(url='', data){
         console.log('Error in sending the data to the server: ', err);
     }
 }
+//getting the project data from the server
+const getProjectData = async function(url=''){
+    const response = await fetch(url);
+    try {
+        const data = await response.json();
+        console.log(data);
+        return data;
+    }
+    catch(err){
+        console.log('error in getting weather data from the server: ', err);
+    }
+}
 
 //adding eventListener to the check button
 
@@ -48,6 +60,12 @@ generate.addEventListener('click', ()=>{
         prepareAppData(data);
         console.log("needed data: ", appData);
         postWeatherData('/post-weather-data', appData);
+    })
+    .then(()=>{
+        getProjectData('/all');
+    })
+    .then((data)=>{
+        console.log(data);
     })
 
 });
