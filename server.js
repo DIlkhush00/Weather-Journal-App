@@ -24,7 +24,11 @@ app.use(express.static('website'));
 
 
 //Routes
-
+app.post('/post-weather-data', (req, res)=>{
+    projectData['data'] = req.body;
+    res.status(200);
+    console.log(projectData);
+})
 
 // Setup Server
 const PORT = 8080;
