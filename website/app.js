@@ -45,25 +45,28 @@ generate.addEventListener('click', ()=>{
     const zip = enteredZip.value;
     getWeatherData(baseURL, APIKey, zip)
     .then((data)=>{
-        const dateTime = getDateAndTime(data.dt);
-
-        appData['name'] = data.name;
-        appData['country'] = data.sys.country;
-        appData['time'] = dateTime[0];
-        appData['date'] = dateTime[1];
-        appData['temp'] = data.main.temp;
-        appData['desc'] = data.weather[0].description;
-        appData['feels_like'] = data.main.feels_like;
-        appData['pressure'] = data.main.pressure;
-        appData['humidity'] = data.main.humidity;
-        appData['feelings'] = userFeelings.value;
-
+        prepareAppData(data);
         console.log("needed data: ", appData);
         postWeatherData('/post-weather-data', appData);
     })
 
 });
 
+//preparing app data
+function prepareAppData(data){
+    const dateTime = getDateAndTime(data.dt);
+
+    appData['name'] = data.name;
+    appData['country'] = data.sys.country;
+    appData['time'] = dateTime[0];
+    appData['date'] = dateTime[1];
+    appData['temp'] = data.main.temp;
+    appData['desc'] = data.weather[0].description;
+    appData['feels_like'] = data.main.feels_like;
+    appData['pressure'] = data.main.pressure;
+    appData['humidity'] = data.main.humidity;
+    appData['feelings'] = userFeelings.value;
+}
 
 //get date and time
 function getDateAndTime(unix) {
