@@ -72,6 +72,7 @@ generate.addEventListener('click', ()=>{
 function updateUI(data){
 
     //getting the elements by id from DOM
+    const container = document.getElementById('container');
     const entryHolder = document.getElementById('entryHolder');
     const name = document.getElementById('name');
     const country = document.getElementById('country');
@@ -83,6 +84,7 @@ function updateUI(data){
     const pressure = document.getElementById('pressure');
     const feelings = document.getElementById('content');
     
+    container.style.width = '90%';
     entryHolder.style.display = 'block';
     name.innerHTML = data.data.name;
     country.innerHTML = data.data.country;
