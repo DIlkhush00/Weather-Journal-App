@@ -1,5 +1,5 @@
 // Personal API Key for OpenWeatherMap API
-const APIKey = '<your-api-key>';
+const APIKey = '<your-api-key>'; //replace your personal key with <your-api-key> (inside quotes)
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
 const appData = {};
 
