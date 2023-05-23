@@ -13,7 +13,6 @@ const getWeatherData = async function (url='', key='', zip='') {
     const response = await fetch(`${url}zip=${zip}&units=metric&appid=${key}`);
     try {
         const data = await response.json();
-        console.log(data);
         return data;
     }
     catch(err){
@@ -51,13 +50,10 @@ const getProjectData = async function(url=''){
 //adding eventListener to the check button
 
 generate.addEventListener('click', ()=>{
-    console.log(enteredZip.value);
-    console.log(userFeelings.value)
     const zip = enteredZip.value;
     getWeatherData(baseURL, APIKey, zip)
     .then((data)=>{
         prepareAppData(data);
-        console.log("needed data: ", appData);
         postWeatherData('/post-weather-data', appData);
     })
     .then(()=>{
