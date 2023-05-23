@@ -7,7 +7,7 @@ Weather Journal App project is developed for Udacity's Front End developer nanod
 - [Table of Contents](#table-of-contents)
 - [Description](#description)
 - [Technology Used](#technology-used)
-- [Setup](#)
+- [Setup](#setup)
     - [Prerequisite](#prerequisite)
     - [Installation](#installation)
 - [Preview](#preview)
@@ -31,7 +31,7 @@ Instruction on how to get this app running locally.
 ### Installation
 1. Clone the repo
 ```sh
-git clone https://github.com/
+git clone https://github.com/DIlkhush00/Weather-Journal-App/
 ``` 
 2. Run the following Command in terminal to install necessary dependencies
 ```sh
@@ -51,5 +51,5 @@ node server.js
 
 
 ## Preview
-[Preview](images/preview.png)
+![Preview](https://github.com/DIlkhush00/Weather-Journal-App/blob/master/images/preview.png)
 
