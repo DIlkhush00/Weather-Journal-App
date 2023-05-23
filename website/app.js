@@ -31,7 +31,7 @@ const postWeatherData = async function(url='', data){
             },
             body: JSON.stringify(data)
         });
-        return response;
+        return response.status;
     }catch(err){
         console.log('Error in sending the data to the server: ', err);
     }
@@ -39,13 +39,12 @@ const postWeatherData = async function(url='', data){
 //getting the project data from the server
 const getProjectData = async function(url=''){
     const response = await fetch(url);
-    try {
+    try{
         const data = await response.json();
-        console.log(data);
         return data;
     }
     catch(err){
-        console.log('error in getting weather data from the server: ', err);
+        console.log("Error in getting the data from server: ", err);
     }
 }
 
@@ -62,14 +61,17 @@ generate.addEventListener('click', ()=>{
         postWeatherData('/post-weather-data', appData);
     })
     .then(()=>{
-        getProjectData('/all');
+        return getProjectData('/all');
     })
-    .then(data => data.json())
     .then((data)=>{
-        console.log(data);
+        updateUI(data);
+    })
+    .catch((err)=>{
+        console.log("Error: ", err);
     })
 
 });
+
 
 //preparing app data
 function prepareAppData(data){
@@ -85,6 +87,11 @@ function prepareAppData(data){
     appData['pressure'] = data.main.pressure;
     appData['humidity'] = data.main.humidity;
     appData['feelings'] = userFeelings.value;
+}
+
+//updating ui
+function updateUI(data){
+
 }
 
 //get date and time
