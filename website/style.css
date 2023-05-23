@@ -116,6 +116,7 @@ body {
 /* showing info */
 
 .showingInfo {
+    display: none;
     margin-left: 2rem;
     flex: 1;
     padding: 1.25rem;
@@ -138,6 +139,10 @@ body {
 .cityTemp {
     font-size: 3rem;
 }
+.cityTemp::after {
+    content: '°C';
+    margin-left: 2px;
+}
 .cityWeatherDesc {
     font-size: 1.5rem;
 }
@@ -156,13 +161,25 @@ body {
     content: "Feels Like ";
     margin-right: .625rem;
 }
+.cityFeelsLike::after {
+    content: "°C";
+    margin-left: 2px;
+}
 .cityHumidity::before {
     content: "Humidity ";
     margin-right: .625rem;
 }
+.cityHumidity::after {
+    content: "%";
+    margin-left: 2px;
+}
 .cityPressure::before {
     content: "Pressure ";
     margin-right: .625rem;
+}
+.cityPressure::after {
+    content: "hPa";
+    margin-left: 2px;
 }
 
 .userFeelings {

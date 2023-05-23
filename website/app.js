@@ -72,6 +72,33 @@ generate.addEventListener('click', ()=>{
 
 });
 
+//updating ui
+function updateUI(data){
+
+    //getting the elements by id from DOM
+    const entryHolder = document.getElementById('entryHolder');
+    const name = document.getElementById('name');
+    const country = document.getElementById('country');
+    const date = document.getElementById('date');
+    const time = document.getElementById('time');
+    const temp = document.getElementById('temp');
+    const feels_like = document.getElementById('feels_like');
+    const humidity = document.getElementById('humidity');
+    const pressure = document.getElementById('pressure');
+    const feelings = document.getElementById('content');
+    
+    entryHolder.style.display = 'block';
+    name.innerHTML = data.data.name;
+    country.innerHTML = data.data.country;
+    date.innerHTML = data.data.date;
+    time.innerHTML = data.data.time;
+    temp.innerHTML = data.data.temp;
+    feels_like.innerHTML = data.data.feels_like;
+    humidity.innerHTML = data.data.humidity;
+    pressure.innerHTML = data.data.pressure;
+    feelings.innerHTML = data.data.feelings;
+
+}
 
 //preparing app data
 function prepareAppData(data){
@@ -89,15 +116,25 @@ function prepareAppData(data){
     appData['feelings'] = userFeelings.value;
 }
 
-//updating ui
-function updateUI(data){
-
-}
 
 //get date and time
 function getDateAndTime(unix) {
         const date = new Date(unix*1000);
-
+        const months = [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ];
+          
         // Format time as "hour:minutes"
         const minutes = String(date.getMinutes()).padStart(2, '0');
         const hour = date.getHours();
@@ -107,9 +144,9 @@ function getDateAndTime(unix) {
 
         // Format date as "date month year"
         const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const month = date.getMonth();
         const year = date.getFullYear();
-        const formattedDate = day + ' ' + month + ' ' + year;
+        const formattedDate = day + ' ' + months[month] + ' ' + year;
 
         return [time, formattedDate];
 }
