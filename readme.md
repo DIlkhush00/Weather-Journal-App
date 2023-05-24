@@ -43,7 +43,7 @@ const APIKey = '<your-api-key>'; //Replace <your-api-key> with your personal API
 ```
 4. Navigate to the path where `server.js` file is and run the following command in terminal
 ```sh
-node server.js
+npm start
 ```
 5. Open any browser and visit the following url `http://localhost:8080/`
 6. There you go :rocket:
